@@ -1,0 +1,37 @@
+H1{
+ text-align: center;
+ font-size: 50PX;
+}
+.register{
+ text-align: center;
+ height: 300px;
+ font-size: 30px;
+ text-decoration: underline;
+ line-height: 2;
+ word-spacing: 5px;
+}
+input[type=text] {
+ width: 50%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ box-sizing: border-box;
+ border: 2px solid blue;
+ border-radius: 4px;
+ }
+ input[type=password] {
+ width: 50%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ box-sizing: border-box;
+ border: 2px solid blue;
+ border-radius: 4px;
+ }
+ input[type=date] {
+ width: 50%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ box-sizing: border-box;
+ border: 2px solid blue;
+ border-radius: 4px;
+ }
+
