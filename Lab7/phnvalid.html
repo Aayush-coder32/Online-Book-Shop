@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>PHONE NUMBER VALIDATION</title>
+<script language="javascript">
+function phno() {
+    var ph = f.ph.value;
+
+    // Check length = 10
+    if (ph.length == 10) {
+        // Check if only digits
+        if (isNaN(ph)) {
+            alert("It is not a valid phone number");
+        } else {
+            alert("It is a valid phone number");
+        }
+    } else {
+        alert("Please enter a valid 10-digit phone number");
+    }
+}
+</script>
+</head>
+<body>
+<center>
+<h2>PHONE NUMBER VALIDATION</h2>
+<form name="f">
+<table>
+<tr>
+    <td align="right">Phone No:</td>
+    <td align="left"><input type="text" maxlength="10" size="30" name="ph"></td>
+</tr>
+<tr>
+    <td></td>
+    <td><input type="button" value="SUBMIT" onClick="phno()"></td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>
