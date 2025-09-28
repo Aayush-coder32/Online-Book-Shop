@@ -1,0 +1,8 @@
+style.css
+b.headline {color:green; font-size:22px; font-family:arial; text-decoration:underline}
+.xlink {cursor:crosshair;color:cyan}
+.hlink{cursor:help;color:purple}
+A:link {text-decoration:none;color:green} /* unvisited link */
+A:visited {text-decoration: none;color:yellow} /* visited link */
+A:hover {text-decoration: underline; color: red} /* mouse over link */ 
+A:active {text-decoration: none;color:blue} /* selected link */
