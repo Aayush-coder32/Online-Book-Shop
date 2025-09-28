@@ -1,0 +1,80 @@
+
+<html>
+<head>
+  <title>Loading XML Document</title>
+  <script>
+    function fun() {
+      alert("You have selected the book");
+    }
+
+    function loadXML() {
+      fetch("/Assignment3/book.xml")
+        .then(response => response.text())
+        .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+        .then(xmldoc => {
+          let arr = xmldoc.getElementsByTagName("ITEM");
+          let output = "";
+
+          for (let i = 0; i < arr.length; i++) {
+            output += `
+              <div align="left">
+                <img src="/Assignment3/sunset.jpg" width="50" height="50">
+              </div>
+              <div align="center"><b>NAME:</b> ${arr[i].getElementsByTagName("NAME")[0].textContent}</div>
+              <div align="center"><b>AUTHOR:</b> ${arr[i].getElementsByTagName("AUTHOR")[0].textContent}</div>
+              <div align="center"><b>PRICE:</b> ${arr[i].getElementsByTagName("PRICE")[0].textContent}</div>
+              <div align="center"><b>PUBLISHER:</b> ${arr[i].getElementsByTagName("PUBLISHER")[0].textContent}</div>
+              <div align="center"><b>ISBN:</b> ${arr[i].getElementsByTagName("ISBN")[0].textContent}</div>
+              <div align="right"><input type="button" value="Add To Cart" onclick="fun()"></div>
+              <hr>
+            `;
+          }
+          document.getElementById("booklist").innerHTML = output;
+        })
+        .catch(err => console.error("Error loading XML:", err));
+    }
+
+    window.onload = loadXML;
+  </script>
+</head>
+<body>
+  <center><h2>Book List</h2></center>
+  <div id="booklist"></div>
+</body>
+</html>
+
+<!-- <HTML>
+<HEAD>
+<TITLE> LOADING XML DOCUMENT </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function fun() {
+  window.alert("You have selected the book");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<SCRIPT LANGUAGE="JavaScript">
+var xmldoc = new ActiveXObject("Microsoft.XMLDOM");
+xmldoc.async = false;
+xmldoc.load("book.xml");
+
+var arr = xmldoc.getElementsByTagName("ITEM");
+
+for (var i = 0; i < arr.length; i++) {
+  document.write("<div align='left'><img src='Sunset.jpg' width='50' height='50'></div>");
+  document.write("<div align='center'><b>NAME:</b> " +
+    xmldoc.getElementsByTagName("NAME")[i].childNodes[0].nodeValue + "<br></div>");
+  document.write("<div align='center'><b>AUTHOR:</b> " +
+    xmldoc.getElementsByTagName("AUTHOR")[i].childNodes[0].nodeValue + "<br></div>");
+  document.write("<div align='center'><b>PRICE:</b> " +
+    xmldoc.getElementsByTagName("PRICE")[i].childNodes[0].nodeValue + "<br></div>");
+  document.write("<div align='center'><b>PUBLISHER:</b> " +
+    xmldoc.getElementsByTagName("PUBLISHER")[i].childNodes[0].nodeValue + "<br></div>");
+  document.write("<div align='center'><b>ISBN:</b> " +
+    xmldoc.getElementsByTagName("ISBN")[i].childNodes[0].nodeValue + "<br></div>");
+  document.write("<div align='right'><input type='button' value='Add To Cart' onclick='fun()'></div>");
+  document.write("<br>");
+}
+</SCRIPT>
+</BODY>
+</HTML> -->
