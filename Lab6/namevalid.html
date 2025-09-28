@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Validating a Textbox</title>
+<script language="javascript">
+function button_click() {
+    var fname = f.fname.value; 
+    var spchar = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?~";
+    var number = "0123456789";
+
+    // check length
+    if (fname.length < 6) {
+        alert("First name must be at least 6 characters");
+        return false;
+    }
+
+    // check for special characters
+    if (fname != "") {
+        for (var i = 0; i < fname.length; i++) {
+            if (spchar.indexOf(fname.charAt(i)) != -1) {
+                alert("User ID should not have special characters");
+                f.fname.value = "";
+                return false;
+            }
+        }
+    }
+
+    // check for numbers
+    if (fname != "") {
+        for (var i = 0; i < fname.length; i++) {
+            if (number.indexOf(fname.charAt(i)) != -1) {
+                alert("User ID should not have numbers");
+                f.fname.value = "";
+                return false;
+            }
+        }
+    }
+
+    // if everything is fine
+    if (fname.length >= 6) {
+        alert("Valid username");
+    }
+}
+</script>
+</head>
+<body>
+<center>
+<form name="f">
+    <h2 align="center">USER NAME VALIDATION</h2>
+    <table>
+        <tr>
+            <td align="right">USERNAME:</td>
+            <td><input type="text" name="fname" maxlength="20" size="30"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" value="SUBMIT" onClick="button_click()"></td>
+        </tr>
+    </table>
+</form>
+</center>
+</body>
+</html>

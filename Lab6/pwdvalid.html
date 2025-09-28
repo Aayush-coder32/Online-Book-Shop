@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>PASSWORD VALIDATION</title>
+<script language="javascript"> function
+pass()
+{ var pw=f.pw.value;
+var cpw=f.cpw.value;
+if(pw.length<6)
+{
+alert("PASSWORD MUST BE 6 CHARACTERS");
+} if(pw!=cpw)
+{
+alert("PASSWORD DON'T MATCH");
+} else
+if(pw.length>=6)
+alert("PASSWORD VALIDATION SUCCESS");
+}
+</script>
+</head>
+<body>
+<form name="f">
+<table align="center">
+<h2 align="center">PASSWORD VALIDATION</h2>
+<br>
+<tr>
+<td align="right">PassWord:</td>
+<td align="left"><input type="PassWord" maxlength="10" size="30"name="pw"></td>
+</tr>
+<tr>
+<td align="right">Confirm PassWord:</td>
+<td align="left"><input type="PassWord" maxlength="10" size="30"name="cpw"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="button" value="SUBMIT" onClick="pass()"/></td>
+</tr>
+</table> </form> </body> </html> 
