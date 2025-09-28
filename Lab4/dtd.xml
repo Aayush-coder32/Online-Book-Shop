@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="/Assignment4/style.xsl"?>
+<!DOCTYPE BOOKS [
+  <!ELEMENT BOOKS (INFORMATION)>
+  <!ELEMENT INFORMATION (Book+)>
+  <!ELEMENT Book (book_name,Author_name,ISBN_number,publisher,Edition,Price)>
+  <!ELEMENT book_name (#PCDATA)>
+  <!ELEMENT Author_name (#PCDATA)>
+  <!ELEMENT ISBN_number (#PCDATA)>
+  <!ELEMENT publisher (#PCDATA)>
+  <!ELEMENT Edition (#PCDATA)>
+  <!ELEMENT Price (#PCDATA)>
+]>
+<BOOKS>
+  <INFORMATION>
+    <Book>
+      <book_name>XML BIBLE</book_name>
+      <Author_name>RAJA</Author_name>
+      <ISBN_number>11530-115</ISBN_number>
+      <publisher>Pearson</publisher>
+      <Edition>I-Edition</Edition>
+      <Price>750</Price>
+    </Book>
+    <Book>
+      <book_name>HTML</book_name>
+      <Author_name>DIETL</Author_name>
+      <ISBN_number>11528-115</ISBN_number>
+      <publisher>Wiley</publisher>
+      <Edition>III-Edition</Edition>
+      <Price>470</Price>
+    </Book>
+    <Book>
+      <book_name>JAVASCRIPT</book_name>
+      <Author_name>RANI</Author_name>
+      <ISBN_number>11525-115</ISBN_number>
+      <publisher>Technical</publisher>
+      <Edition>IV-Edition</Edition>
+      <Price>270</Price>
+    </Book>
+    <Book>
+      <book_name>WEB TECHNOLOGIES</book_name>
+      <Author_name>PUNTAMBEKAR</Author_name>
+      <ISBN_number>11530-115</ISBN_number>
+      <publisher>Technical</publisher>
+      <Edition>I-Edition</Edition>
+      <Price>340</Price>
+    </Book>
+  </INFORMATION>
+</BOOKS>
